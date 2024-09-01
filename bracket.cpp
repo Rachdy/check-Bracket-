@@ -1,13 +1,11 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include<ctime>
-#include<unistd.h>
+#include"bracket.hpp"
 
+
+const int capacity=1000;
 
 
 struct Stack{
-    char caracters[1000];
+    char caracters[capacity];
     int current_size = - 1;
 
     bool empty(){
@@ -67,9 +65,10 @@ bool check(std::string str){
     if(open_praket.empty()) return true ;
     else return false ;
 }
+const char elements[]={'{', '[', ']','(', ')','1','2','4','3','5','6','7','0','/','8','*','+','9','-','}'};
 //function generate string from determinat characters  and return a string 
 std::string str_generate(){
-    char elements[]={'{', '[', ']','(', ')','1','2','4','3','5','6','7','0','/','8','*','+','9','-','}'};
+  
     int length = sizeof(elements) / sizeof(elements[0]);
     std::string str;
     for(int i =0; i<length-1 ;i++){
